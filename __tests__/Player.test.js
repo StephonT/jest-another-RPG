@@ -1,5 +1,5 @@
-import Player from '../lib/Player.js';
-import Potion from '../lib/Potion.js';
+const Player = require('../lib/Player');
+const Potion = require('../lib/Potion');
 
 jest.mock('../lib/Potion.js');
 
@@ -76,7 +76,7 @@ test("gets player's attack value", () => {
   player.strength = 10;
 
   expect(player.getAttackValue()).toBeGreaterThanOrEqual(5);
-  expect(player.getAttackValue()).toBeGreaterThanOrEqual(15);
+  expect(player.getAttackValue()).toBeLessThanOrEqual(15);
 
 });
 
@@ -94,4 +94,4 @@ test("subtracts from player's health", () => {
 });
 
 
-//10.3.3
+
